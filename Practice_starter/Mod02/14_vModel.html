@@ -8,15 +8,15 @@
   </head>
   <body>
     <div id="app">
-      <input placeholder="Enter your name " />
-      <div>Your name is: </div>
+      <input v-model="userName" placeholder="Enter your name " />
+      <div>Your name is: {{userName}}</div>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
         data() {
           return {
-            
+            userName: ''
           };
         },
       }).mount("#app");

@@ -8,15 +8,17 @@
   </head>
   <body>
     <div id="app">
-      <textarea v-model="text"></textarea>
-      <p>{{text}}</p>
+
+       <input type="text" name=""  v-bind:value="msg" >
+       <input type="text" name=""  :value="msg">
+
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
         data() {
           return {
-            text: ''
+            msg: "Hello World !",
           };
         },
       }).mount("#app");

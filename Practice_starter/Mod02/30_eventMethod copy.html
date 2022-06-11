@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .header {
+        width: 20%;
+        background-color: #ff5722;
+        color: #ffffff;
+        >ul {
+            width: 100%;
+            @include clearfix;
+            >li {
+                width: 100%;
+                border: 1px solid #ffffff;
+                cursor: pointer; // float: left;
+                color: 20px;
+                text-align: center;
+                line-height: 60px;
+                &:hover {
+                    background-color: #ff9800;
+                }
+                >ul {
+                    width: 100%;
+                    background: red;
+                    li{
+                        &:hover{
+                            background: #c31111;
+                        }
+                    }
+                }
+            }
+            .active {
+                background-color: #ff9800;
+            }
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <ul>
+            <!-- 迴圈資料在點選呼叫changeli方法時將當前索引和本條資料傳進去,並使用當前資料show的bool值新增或移除樣式 -->
+            <li :class="[{active:item.show}]" @click="changeli(index,item)" v-for="(item,index) in headerData">
+                <!-- 在這裡列印出boll值方便檢視 -->
+                {{item.name}}{{item.show}}
+                <!-- 判斷當前這條資料的bool值如果是true就開啟二級選單,如果是false就關閉二級選單 -->
+                    <ul v-show="item.show"> 
+                        <!-- 迴圈二級選單資料並使用.stop阻止冒泡 -->
+                        <li v-for="(a,index) in item.list" v-on:click.stop="doThis(index)">{{a}}</li>
+                    </ul>
+              
+            </li>
+        </ul>
+    </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        data() {
+            return {
+                headerData: [{
+                    name: '導航1',
+                    list: ['子集', '子集', '子集', '子集', '子集'],
+                    show: false
+                }, {
+                    name: '導航2',
+                    list: ['子集', '子集', '子集', '子集', '子集'],
+                    show: false
+                }, {
+                    name: '導航3',
+                    list: ['子集', '子集', '子集', '子集', '子集'],
+                    show: false
+                }, {
+                    name: '導航4',
+                    list: ['子集', '子集', '子集', '子集', '子集'],
+                    show: false
+                }, {
+                    name: '導航5',
+                    list: ['子集', '子集', '子集', '子集', '子集'],
+                    show: false
+                }]
+            }
+        },
+        methods: {
+            changeli: function(ind, item) {
+                // 先迴圈資料中的show將其全部置為false,此時模板裡的v-if判斷生效關閉全部二級選單,並移除樣式
+                this.headerData.forEach(i => {
+                    // 判斷如果資料中的headerData[i]的show屬性不等於當前資料的show屬性那麼headerData[i]等於false
+                    if (i.show !== this.headerData[ind].show) {
+                        i.show = false;
+                    };
+                });
+                // 取反(true或false)
+                item.show = !item.show;
+                console.log(item.name)
+            },
+            doThis: function(index) {
+                alert(index)
+            }
+        }
+      }).mount("#app");
+    </script>
+  </body>
+</html>

@@ -5,16 +5,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
+  <title> Document </title>
 </head>
 
 <body>
   <div id="app">
-    
-    <span> {{ msg }} </span>
 
-    <span v-html="msg" />
-    
+    <!-- <ul>
+      <li v-for="(item,index) in MyArray" v-bind:id="item">
+        <div>{{index}}</div>  
+        <div>{{item}}</div> 
+      </li>
+    </ul> -->
+
+    <ul>
+
+      <template v-for="item in MyArray">
+        <li >
+          {{item}}
+        </li>
+        <li >
+          {{item}}
+        </li>
+      </template>
+
+
+
+    </ul>
 
   </div>
   <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
@@ -22,7 +39,7 @@
     Vue.createApp({
       data() {
         return {
-          msg: "<h1> Hello World Vue 3 </h1>",
+          MyArray: ["AA", "BB", "CC", "DD", "EE"],
         };
       },
     }).mount("#app");

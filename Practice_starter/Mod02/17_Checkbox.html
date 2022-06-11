@@ -8,15 +8,16 @@
   </head>
   <body>
     <div id="app">
-     
-      <p> <strong> Checkbox: </strong> {{ }} </p>
+     <input type="checkbox" v-model="mycheck">
+      <label for="mycheck"></label>
+      <p> <strong> Checkbox: </strong> {{ mycheck}} </p>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
         data() {
           return {
-     
+            mycheck: false,
           };
         },
       }).mount("#app");

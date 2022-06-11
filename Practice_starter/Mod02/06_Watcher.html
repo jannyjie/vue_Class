@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" />
+      <input type="text" v-model.number="mydata" />
       <p>{{ msg }}</p>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
@@ -16,15 +16,23 @@
       Vue.createApp({
         data() {
           return {
-
+            mydata: null,
             msg: "",
           };
         },
         watch: {
-       
+          mydata: function (value) {
+            if (this.IsInRange(value)) {
+              this.msg = value;
+            } else {
+              this.msg = mydata;
+            }
+          },
         },
         methods: {
-        
+          IsInRange: function (number) {
+            return number > 0 && number <= 100;
+          },
         },
       }).mount("#app");
     </script>

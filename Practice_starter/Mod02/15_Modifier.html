@@ -8,20 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <input  placeholder="Enter data" />
-      <p><strong> Number : </strong> {{ }}</p>
-      <p><strong> Type : </strong> {{ }}</p>
+      <input  placeholder="Enter data" v-model="input.input1"/>
+      <p><strong> Number : </strong> {{ input.input1}}</p>
+      <p><strong> Type : </strong> {{ typeof input.input1 }}</p>
       <br />
-      <input  placeholder="Enter data" />
-      <p><strong> Number : </strong> {{  }}</p>
-      <p><strong> Type : </strong> {{ }}</p>
+      <input  placeholder="Enter data" v-model.number="input.input2"/>
+      <p><strong> Number : </strong> {{ input.input2 }}</p>
+      <p><strong> Type : </strong> {{ typeof input.input2}}</p>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
         data() {
           return {
-           
+           input: {
+            input1: "",
+            input2: ""
+           }
           };
         },
       }).mount("#app");

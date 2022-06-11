@@ -8,9 +8,12 @@
   </head>
   <body>
     <div id="app">
-    
+      <select v-model="city">
+        <option>AA</option>
+        <option>BB</option>
+      </select>
       <p>
-        <strong> 你選了: </strong> {{ }}
+        <strong> 你選了: </strong> {{ city }}
       </p>
   
     </div>
@@ -19,7 +22,7 @@
       Vue.createApp({
         data() {
           return {
-            
+            city:""
           };
         },
       }).mount("#app");

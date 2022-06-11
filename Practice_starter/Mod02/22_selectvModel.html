@@ -9,7 +9,7 @@
   <body>
     <div id="app">
       <h3>選取多個城市</h3>
-      <select >
+      <select v-model="citys" multiple>
         <option> 台北 </option>
         <option> 台中 </option>
         <option> 高雄 </option>
@@ -17,7 +17,7 @@
         <option> 雲林 </option>
       </select>
       <p>
-        <strong> 你選了: </strong> {{ }}
+        <strong> 你選了: </strong> {{citys }}
       </p>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
@@ -25,7 +25,7 @@
       Vue.createApp({
         data() {
           return {
-            
+            citys: []
           };
         },
       }).mount("#app");
