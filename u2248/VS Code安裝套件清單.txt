@@ -1,0 +1,12 @@
+•	「Vetur」
+•	「Vue VSCode Snippets」
+•	「Live Server」
+•	「JavaScript standardjs styled snippets」
+•	「VS Code JavaScript (ES6) snippets」
+
+
+----------------------------------------------------------
+
+  "emmet.includeLanguages": {
+    "vue": "html"
+  },
