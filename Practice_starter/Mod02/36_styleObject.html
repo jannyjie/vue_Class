@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <div >{{ msg }}</div>
+      <div :style="styleObj" @click="larger()">{{ msg }}</div>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
@@ -17,11 +17,14 @@
           return {
             msg: "Hello World !",
             fontSize: 12,
-           
+            styleObj: {fontSize: '12px'}
           };
         },
         methods: {
-          
+          larger: function () {
+            this.fontSize = this.fontSize + 2;
+            this.styleObj.fontSize = this.fontSize + "px";
+          },
         },
       }).mount("#app");
     </script>
