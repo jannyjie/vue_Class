@@ -9,14 +9,13 @@
   <body>
     <div id="app">
       <span > {{ msg }} </span>
-      <p v-html="msg"> </p>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
         data() {
           return {
-            msg: "<h1>Hello World Vue 3</h1>",
+            msg: "Hello World Vue 3",
           };
         },
       }).mount("#app");

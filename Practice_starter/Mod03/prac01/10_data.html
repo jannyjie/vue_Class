@@ -8,25 +8,24 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" />
-      <p>{{ msg }}</p>
+      <welcome-component user-name="mary"></welcome-component>
     </div>
-    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script>
-      Vue.createApp({
+          let welcome = {
+        template: ``,
+        props: ["userName"],
+   
+      };
+      var app = Vue.createApp({
         data() {
-          return {
-
-            msg: "",
-          };
+          return {};
         },
-        watch: {
-       
+        components: {
+          "WelcomeComponent" : welcome
         },
-        methods: {
-        
-        },
-      }).mount("#app");
+      });
+      app.mount("#app");
     </script>
   </body>
 </html>

@@ -10,7 +10,7 @@
     <div id="app">
       <button v-on:click="show = !show">Click</button>
       <div v-if="show">{{ msg }}</div>
-      <div v-else>{{msg2}}</div>
+     
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
@@ -19,7 +19,7 @@
           return {
             show: false,
             msg: " Hello World ! ",
-            msg: "Good Day!"
+            
           };
         },
       }).mount("#app");

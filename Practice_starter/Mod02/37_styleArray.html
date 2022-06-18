@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <div v-bind:style="[styleObj, colorObj]" v-on:click="larger()">
+      <div v-bind:style="" v-on:click="larger()">
         {{ msg }}
       </div>
     </div>
@@ -20,7 +20,7 @@
             msg: "Hello World !",
             fontSize: 12,
             styleObj: { fontSize: "12px" },
-            colorObj: {color: '#f44336', backgroundColor: '#ffeb3b'}
+           
           };
         },
         methods: {

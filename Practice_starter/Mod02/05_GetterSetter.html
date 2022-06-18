@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" v-model="msg">
+ 
       <p>{{ msg }}</p>
       <p>{{ msgUpper }}</p>
     </div>
@@ -22,12 +22,7 @@
         },
         computed: {
           msgUpper: {
-            get(){
-              return this.msg.toUpperCase();
-            },
-            set(newvalue){
-              this.msg = newvalue.toLowerCase();
-            }
+           
           },
         },
       }).mount("#app");

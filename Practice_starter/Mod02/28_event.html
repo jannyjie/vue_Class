@@ -8,9 +8,9 @@
   </head>
   <body>
     <div id="app">
-      <button @click="plusNum(step)"> Add to Cart </button>
+      <button > Add to Cart </button>
       <p>
-        <strong> num : </strong> {{ num }}
+        <strong> num : </strong> {{  }}
       </p>
     
     </div>
@@ -19,15 +19,9 @@
       Vue.createApp({
         data() {
           return {
-            num: 0,
-            step: 10,
+            
           };
         },
-        methods:{
-          plusNum(val){
-            this.num += val
-          }
-        }
       }).mount("#app");
     </script>
   </body>

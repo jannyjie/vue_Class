@@ -8,22 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <div >{{ msg }}</div>
+      <welcome-component></welcome-component> 
+      <welcome-component></welcome-component> 
     </div>
-    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script>
-      Vue.createApp({
+      let welcome = {
+        template: "<h1>Hello</h1>",
+      };
+      var app = Vue.createApp({
         data() {
-          return {
-            msg: "Hello World !",
-            fontSize: 12,
-           
-          };
+          return {};
         },
-        methods: {
-          
+        components: {
+         
         },
-      }).mount("#app");
+      });
+      app.mount("#app");
     </script>
   </body>
 </html>
