@@ -16,7 +16,7 @@
   </head>
   <body>
     <div id="app">
-      <div v-bind:class="[mycolor, bg]">{{ msg }}</div>
+      <div v-bind:class="[aa, bb]">{{ msg }}</div>
     </div>
     <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
     <script>
@@ -24,8 +24,8 @@
         data() {
           return {
             msg: " Hello World ! ",
-            mycolor: "mycolor",
-            bg: "bg",
+            aa: "mycolor",
+            bb: "bg",
           };
         },
       }).mount("#app");
