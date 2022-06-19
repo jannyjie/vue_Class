@@ -1,0 +1,11 @@
+inputusername
+
+
+Pascal
+InputUserName
+
+camel
+inputUserName
+
+kebab
+input-user-name

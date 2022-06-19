@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="RemoveIndex1" @click="RemoveIndex1">
+
+        <!-- 設定key屬性為唯一值識別，那麼vue就會根據key來決定是否重新生成標籤 -->
+
+        <ul>
+            <li v-for="item in myArray" :key="item.v">
+                {{item.v}} : 
+                <input type="text">
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"> </script>
+    <script>
+
+        const vueInstance = Vue.createApp({
+            data() {
+                return {
+                    myArray: [
+                        { v: "user1" },
+                        { v: "user2" },
+                        { v: "user3" }
+                    ]
+                };
+            },
+            methods:{
+                RemoveIndex1:function () {
+                    this.myArray = this.myArray.filter(item => item.v != "user1");
+                }
+            }
+        }).mount("#app");
+
+    </script>
+
+</body>
+
+</html>

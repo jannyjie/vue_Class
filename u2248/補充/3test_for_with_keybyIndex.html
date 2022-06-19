@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="RemoveIndex1" @click="RemoveIndex1">
+
+        <!-- 不要拿index當作key，因為在刪除陣列成員的時候，index會重新被分配，
+            就會造成其他成員繼承了被刪除成員的index，這樣key的唯一性就被破壞了-->
+
+        <ul>
+            <li v-for="(item,index) in myArray" :key="index">
+                {{item.v}} : 
+                <input type="text">
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"> </script>
+    <script>
+
+        const vueInstance = Vue.createApp({
+            data() {
+                return {
+                    myArray: [
+                        { v: "user1" },
+                        { v: "user2" },
+                        { v: "user3" }
+                    ]
+                };
+            },
+            methods:{
+                RemoveIndex1:function () {
+                    this.myArray = this.myArray.filter(item => item.v != "user1");
+                }
+            }
+        }).mount("#app");
+
+    </script>
+
+</body>
+
+</html>

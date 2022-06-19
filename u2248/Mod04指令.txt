@@ -1,0 +1,18 @@
+練習2
+npm install bootstrap@5.0.2 @popperjs/core
+
+
+練習3
+npm install vuex@4 
+
+
+練習4
+npm install axios
+
+
+練習5
+npm install vue-router@4
+
+
+練習10
+npm install http-server -g

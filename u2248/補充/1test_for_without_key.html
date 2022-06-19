@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="RemoveIndex1" @click="RemoveIndex1">
+        <ul>
+            <!-- vue預設會reuse標籤，所以如果刪掉的不是最後一個成員，
+            那麼被刪掉的標籤就會被拿來給遞補上來的標籤用，這時候部分值就會延續，造成異常 -->
+            <li v-for="item in myArray">
+                {{item.v}} : <input type="text">
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"> </script>
+    <script>
+
+        const vueInstance = Vue.createApp({
+            data() {
+                return {
+                    myArray: [
+                        { v: "user1" },
+                        { v: "user2" },
+                        { v: "user3" }
+                    ]
+                };
+            },
+            methods:{
+                RemoveIndex1:function () {
+                    this.myArray = this.myArray.filter(item => item.v != "user1");
+                }
+            }
+        }).mount("#app");
+
+        // .delete (包含 del 與 backspace 鍵)
+        // .meta (在 window 對應的是視窗鍵 (⊞)，在 mac 系統對應的是 command 鍵 (⌘)。)
+
+    </script>
+
+</body>
+
+</html>
