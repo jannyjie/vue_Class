@@ -1,19 +1,23 @@
 <template>
   <div class="container">
-    <h1 class="display-3">Posts App</h1>
-    <h1 class="h6">Seeing all posts.</h1>
-    <Posts />
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/about">about</router-link>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    	<router-view></router-view>
   </div>
 </template>
 
 <script>
-import Posts from "./components/Posts.vue";
 
 export default {
   name: "App",
-  components: {
-    Posts,
-  },
 };
 </script>
 
@@ -22,6 +26,9 @@ export default {
   color: #2c3e50;
   background-color: rgb(252, 233, 198);
   padding: 50px;
+}
+.active {
+    color: red;
 }
 body {
   background-color: rgb(252, 233, 198) !important;
